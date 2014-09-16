@@ -20,12 +20,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = '1)h)8o=f&4dq_(jr935^gd0e5ww0ze)yg9q-u17_dz&79omvmg'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
+#DEBUG = True
 
 TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = [
     'localhost',
+    'neillyons.io',
 ]
 
 
@@ -85,7 +86,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/frag/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
@@ -100,6 +101,8 @@ PIPELINE_COMPILERS = (
 )
 
 PIPELINE_YUGLIFY_BINARY = os.path.join(BASE_DIR, "node_modules/yuglify/bin/yuglify")
+
+PIPELINE_LESS_BINARY = os.path.join(BASE_DIR, "node_modules/yuglify/bin/less")
 
 PIPELINE_CSS = {
     'app': {
