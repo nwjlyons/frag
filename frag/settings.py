@@ -29,6 +29,8 @@ ALLOWED_HOSTS = [
     'neillyons.io',
 ]
 
+FORCE_SCRIPT_NAME = '/frag'
+
 
 # Application definition
 
