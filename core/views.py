@@ -60,7 +60,7 @@ def home(request):
 
                 return HttpResponse(str(soup))
             else:
-                messages.error(request, "Error fetching page.")
+                messages.warning(request, "Error fetching page.")
     else:
         form = FragForm()
 

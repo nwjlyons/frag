@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'bootstrapform',
     'core',
+    'pipeline',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -83,3 +84,24 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
+
+STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
+
+STATICFILES_DIRS = (
+    ("vendor", os.path.join(BASE_DIR, "bower_components")),
+)
+
+PIPELINE_COMPILERS = (
+    'pipeline.compilers.less.LessCompiler',
+)
+
+PIPELINE_CSS = {
+    'app': {
+        'source_filenames': (
+            'less/core.less',
+        ),
+        'output_filename': 'css/app.min.css',
+    },
+}
