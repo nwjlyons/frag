@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = '1)h)8o=f&4dq_(jr935^gd0e5ww0ze)yg9q-u17_dz&79omvmg'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = True
+DEBUG = False
 
 TEMPLATE_DEBUG = True
 
@@ -104,7 +104,7 @@ PIPELINE_COMPILERS = (
 
 PIPELINE_YUGLIFY_BINARY = os.path.join(BASE_DIR, "node_modules/yuglify/bin/yuglify")
 
-PIPELINE_LESS_BINARY = os.path.join(BASE_DIR, "node_modules/yuglify/bin/less")
+PIPELINE_LESS_BINARY = os.path.join(BASE_DIR, "node_modules/less/bin/lessc")
 
 PIPELINE_CSS = {
     'app': {

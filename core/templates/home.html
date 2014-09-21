@@ -6,8 +6,16 @@
 
 {% block body %}
 <h1><a href="{% url 'home' %}">Frag</a></h1>
+<p class="lead">Link to a location within a webpage</p>
+
+<p>It's annoying to send someone a link and say “go here and search for X”. Ideally you'd send a URL with a  <a href="http://en.wikipedia.org/wiki/Fragment_identifier">fragment identifier</a> (eg. http://example.com/page<span style="color:red;">#fragment-identifier</span>) but not all websites support this feature. Use the form below to add this feature to a website.</p>
 <form action="" method="GET" novalidate>
   {{ form|bootstrap }}
   <button type="submit" class="btn btn-default">Submit</button>
 </form>
+<hr>
+<ul>
+  <li>Doesn't work on websites whose HTML is generated using javascript. eg. Single page apps.</li>
+  <li>Doesn't work on websites that required a login.</li>
+</ul>
 {% endblock %}
