@@ -17,13 +17,13 @@ def deploy():
     """
     Deploy to web server.
     """
-    # local("git checkout master")
-    # local("git push")
+    local("git checkout master")
+    local("git push")
 
-    # utc_datetime = datetime.datetime.utcnow().strftime("%Y-%m-%dT%H-%M-%S")
+    utc_datetime = datetime.datetime.utcnow().strftime("%Y-%m-%dT%H-%M-%S")
 
-    # local("git tag -a deploy-%s -m 'Deployed'" % utc_datetime)
-    # local('git push --tags')
+    local("git tag -a deploy-%s -m 'Deployed'" % utc_datetime)
+    local('git push --tags')
 
     with cd(env.project_root):
 
