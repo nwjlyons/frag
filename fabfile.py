@@ -6,7 +6,7 @@ from fabric.api import *
 env.roledefs.update({
     'webserver': ['nwjlyons@nwjlyons.webfactional.com'],
 })
-env.project_root = "/home/nwjlyons/projects/tokyo"
+env.project_root = "/home/nwjlyons/webapps/frag"
 env.forward_agent = True
 env.warn_only=True
 
@@ -26,4 +26,12 @@ def deploy():
     local('git push --tags')
 
     with cd(env.project_root):
-        run("git pull")
+
+        with cd("frag"):
+            o = run("git pull")
+            if "requirements.txt" in o:
+                run("workon frag && pip install -r requirements.txt")
+            run("workon frag && ./manage.py collectstatic --noinput")
+            run("workon frag && ./manage.py migrate")
+
+        run("./apache2/bin/restart")
