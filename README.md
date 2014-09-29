@@ -3,7 +3,7 @@ frag
 
 Link to a location within a webpage
 
-It's annoying to send someone a link and say “go here and search for X”. Ideally you'd send a URL with a fragment identifier (eg. http://example.com/page#fragment-identifier) but not all websites support this feature. 
+It's annoying to send someone a link and say “go here and search for X”. Ideally you'd send a URL with a fragment identifier (eg. http://example.com/page#fragment-identifier) but not all websites support this feature. Visit [http://neillyons.io/frag/](http://neillyons.io/frag/) to use fragment identifiers on any website.
 
 Note
 
